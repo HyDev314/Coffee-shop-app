@@ -1,6 +1,5 @@
-import 'package:coffe_shop_app/features/domain/entities/product_entity.dart';
-
-import '../../../core/constants/constants.dart';
+import '../../../../core/constants/constants.dart';
+import '../../domain/entities/product_entity.dart';
 
 class ProductModel extends ProductEntity {
   const ProductModel({
