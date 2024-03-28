@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../config/theme/palatte.dart';
 
-class StartButton extends StatelessWidget {
-  const StartButton({super.key});
+class StartButtonWidget extends StatelessWidget {
+  const StartButtonWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -56,6 +56,7 @@ dependencies:
 
   flutter_svg: ^2.0.7
   flutter_progress_hud: ^2.0.2
+  bubble_tab_indicator: ^0.1.6
 
 dev_dependencies:
   flutter_test:
@@ -84,6 +85,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
      - assets/images/
+     - assets/icons/
 
   fonts:
      - family: Sora
@@ -92,4 +94,4 @@ flutter:
          - asset: assets/fonts/sora/Sora-Bold.ttf
            weight: 600
          - asset: assets/fonts/sora/Sora-Light.ttf
-           weight: 600
+           weight: 400

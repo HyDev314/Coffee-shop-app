@@ -12,7 +12,10 @@ class Asset {
   static const String icoHeart = '${iconPath}heart.svg';
   static const String icoMilk = '${iconPath}milk.svg';
   static const String icoStar = '${iconPath}star.svg';
+  static const String icoArrowDown = '${iconPath}arrowDown.svg';
+  static const String icoSearch = '${iconPath}search.svg';
 
   static const String imageStart = '${imagePath}start.png';
   static const String imagePromo = '${imagePath}promo.png';
+  static const String imageAvatar = '${imagePath}fake_avatar.png';
 }

@@ -6,6 +6,8 @@ class Palette {
   static const Color greyColor = Color(0xFF131313);
   static const Color searchBarColor = Color(0xFF313131);
 
+  static const Color backgroundColor = Color(0xFFF5F5F5);
+
   static const Color mainColor = Color(0xFFC67C4E);
   static const Color secondColor = Color(0xFF8D8D8D);
 

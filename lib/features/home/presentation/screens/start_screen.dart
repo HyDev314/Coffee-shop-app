@@ -25,7 +25,9 @@ class _StartScreenState extends State<StartScreen> {
               height: 600,
               child: Image.asset(
                 Asset.imageStart,
-                fit: BoxFit.none,
+                //alignment: const Alignment(0.0, 1.0),
+                fit: BoxFit.fitWidth,
+                //scale: 2,
               ),
             ),
             const Padding(
@@ -59,7 +61,7 @@ class _StartScreenState extends State<StartScreen> {
                     ),
                   ),
                   SizedBox(height: 20),
-                  StartButton(),
+                  StartButtonWidget(),
                   SizedBox(height: 20),
                 ],
               ),
