@@ -54,6 +54,8 @@ dependencies:
   #Hooks
   flutter_hooks: ^0.18.3
 
+  url_launcher: ^6.2.5
+
   flutter_svg: ^2.0.7
   flutter_progress_hud: ^2.0.2
   bubble_tab_indicator: ^0.1.6

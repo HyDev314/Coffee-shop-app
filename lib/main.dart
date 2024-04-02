@@ -1,11 +1,11 @@
+import 'package:coffe_shop_app/config/routes/routes.dart';
 import 'package:coffe_shop_app/features/home/di/injection_container.dart';
 import 'package:coffe_shop_app/features/home/presentation/bloc/product/product_bloc.dart';
 import 'package:coffe_shop_app/features/home/presentation/bloc/product/product_event.dart';
-import 'package:coffe_shop_app/features/home/presentation/screens/home_screen.dart';
-import 'package:coffe_shop_app/features/home/presentation/screens/product_details.dart';
-import 'package:coffe_shop_app/features/home/presentation/screens/start_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'features/home/presentation/screens/test.dart';
 
 Future<void> main() async {
   await initializeDependencies();
@@ -26,7 +26,9 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const ProductDetailsScreen(),
+        initialRoute: '/',
+        onGenerateRoute: AppRoute.onGenerateRoutes,
+        //home: SizePicker(),
       ),
     );
   }

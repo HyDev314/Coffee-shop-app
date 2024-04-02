@@ -13,4 +13,5 @@ class Palette {
 
   static const Color textColor = Color(0xFF2F2D2C);
   static const Color thinTextColor = Color(0xFF9B9B9B);
+  static const Color grey2Color = Color(0xFFF2F2F2);
 }
