@@ -1,4 +1,4 @@
-import 'package:coffe_shop_app/config/theme/palatte.dart';
+import 'package:coffe_shop_app/config/theme/palette.dart';
 import 'package:coffe_shop_app/features/home/presentation/widgets/app_bar_home.dart';
 import 'package:coffe_shop_app/features/home/presentation/widgets/promo_card.dart';
 import 'package:coffe_shop_app/features/home/presentation/widgets/search_bar.dart';

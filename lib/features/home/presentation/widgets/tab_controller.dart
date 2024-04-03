@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../config/theme/palatte.dart';
+import '../../../../config/theme/palette.dart';
 import '../../domain/entities/product_entity.dart';
 import '../bloc/product/product_bloc.dart';
 

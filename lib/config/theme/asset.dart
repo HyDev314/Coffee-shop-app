@@ -21,6 +21,9 @@ class Asset {
   static const String icoDocument = '${iconPath}document.svg';
   static const String icoEditSquare = '${iconPath}editSquare.svg';
 
+  static const String icoCurrentLocation = '${iconPath}currentLocation.svg';
+  static const String icoDestination = '${iconPath}destination.svg';
+
   static const String imageStart = '${imagePath}start.png';
   static const String imagePromo = '${imagePath}promo.png';
   static const String imageAvatar = '${imagePath}fake_avatar.png';

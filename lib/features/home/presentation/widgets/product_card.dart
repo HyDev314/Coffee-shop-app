@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:coffe_shop_app/config/theme/palatte.dart';
+import 'package:coffe_shop_app/config/theme/palette.dart';
 import 'package:coffe_shop_app/features/home/domain/entities/product_entity.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

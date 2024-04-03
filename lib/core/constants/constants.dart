@@ -9,3 +9,5 @@ String kCreateAt = 'createAt';
 
 const String productBaseApiUrl =
     'https://6600e87887c91a116419bd8f.mockapi.io/api/v1';
+
+const String google_api_key = 'API_KEY';

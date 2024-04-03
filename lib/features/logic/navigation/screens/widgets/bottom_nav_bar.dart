@@ -1,4 +1,4 @@
-import 'package:coffe_shop_app/config/theme/palatte.dart';
+import 'package:coffe_shop_app/config/theme/palette.dart';
 import 'package:coffe_shop_app/features/logic/navigation/screens/widgets/nav_bar_item.dart';
 import 'package:flutter/cupertino.dart';
 

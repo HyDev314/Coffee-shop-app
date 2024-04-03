@@ -7,6 +7,8 @@ import 'package:coffe_shop_app/features/logic/navigation/screens/start_screen.da
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../features/home/presentation/screens/map_screen.dart';
+
 class AppRoute {
   static MainScreenBloc mainScreenBloc = MainScreenBloc();
   static Route onGenerateRoutes(RouteSettings settings) {
@@ -31,6 +33,9 @@ class AppRoute {
         return _materialRoute(
           OrderScreen(product: settings.arguments as ProductEntity),
         );
+
+      case '/EditAddress':
+        return _materialRoute(const LocationForm());
 
       default:
         return _materialRoute(const StartScreen());

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../config/theme/palatte.dart';
+import '../../../../../config/theme/palette.dart';
 
 class StartButtonWidget extends StatelessWidget {
   const StartButtonWidget({super.key});

@@ -1,11 +1,10 @@
-import 'package:coffe_shop_app/config/theme/asset.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:coffe_shop_app/features/home/domain/entities/product_entity.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/svg.dart' show SvgPicture;
 
-import '../../../../config/theme/palatte.dart';
+import 'package:coffe_shop_app/config/theme/asset.dart';
+import 'package:coffe_shop_app/features/home/domain/entities/product_entity.dart';
+
+import '../../../../config/theme/palette.dart';
 
 class OrderScreen extends StatefulWidget {
   final ProductEntity? product;
@@ -20,14 +19,31 @@ class OrderScreen extends StatefulWidget {
 }
 
 class _OrderScreenState extends State<OrderScreen> {
+  void _onBackButtonTapped(BuildContext context) {
+    Navigator.of(context).pop();
+  }
+
+  void _onOrderPressed(BuildContext context) {
+    Navigator.pushNamed(context, '/EditAddress');
+  }
+
+  int _numProduct = 1;
+  int fee = 2;
+
+  void _increment() {
+    setState(() {
+      _numProduct++;
+    });
+  }
+
+  void _decrement() {
+    setState(() {
+      _numProduct--;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    void _onBackButtonTapped(BuildContext context) {
-      Navigator.of(context).pop();
-    }
-
-    int numProduct = 1;
-
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 100,
@@ -255,10 +271,8 @@ class _OrderScreenState extends State<OrderScreen> {
                             width: 28,
                             child: ElevatedButton(
                               onPressed: () {
-                                if (numProduct > 1) {
-                                  setState(() {
-                                    numProduct -= 1;
-                                  });
+                                if (_numProduct > 1) {
+                                  _decrement();
                                 }
                               },
                               style: ElevatedButton.styleFrom(
@@ -281,7 +295,7 @@ class _OrderScreenState extends State<OrderScreen> {
                             height: 28,
                             child: Center(
                               child: Text(
-                                numProduct.toString(),
+                                _numProduct.toString(),
                                 style: const TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600,
@@ -298,9 +312,7 @@ class _OrderScreenState extends State<OrderScreen> {
                             width: 28,
                             child: ElevatedButton(
                               onPressed: () {
-                                setState(() {
-                                  numProduct += 1;
-                                });
+                                _increment();
                               },
                               style: ElevatedButton.styleFrom(
                                   shape: const CircleBorder(),
@@ -397,7 +409,7 @@ class _OrderScreenState extends State<OrderScreen> {
                         ),
                       ),
                       Text(
-                        widget.product!.price,
+                        '${_numProduct * int.parse(widget.product!.price)}',
                         style: const TextStyle(
                           fontFamily: 'Sora',
                           fontSize: 14,
@@ -410,10 +422,10 @@ class _OrderScreenState extends State<OrderScreen> {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         'Delivery Fee',
                         style: TextStyle(
                           fontFamily: 'Sora',
@@ -423,8 +435,8 @@ class _OrderScreenState extends State<OrderScreen> {
                         ),
                       ),
                       Text(
-                        '\$ 0',
-                        style: TextStyle(
+                        '\$ $fee',
+                        style: const TextStyle(
                           fontFamily: 'Sora',
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
@@ -438,10 +450,10 @@ class _OrderScreenState extends State<OrderScreen> {
                     thickness: 1,
                     height: 35,
                   ),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         'Total Payment',
                         style: TextStyle(
                           fontFamily: 'Sora',
@@ -451,8 +463,8 @@ class _OrderScreenState extends State<OrderScreen> {
                         ),
                       ),
                       Text(
-                        '\$ 0',
-                        style: TextStyle(
+                        '\$ ${_numProduct * int.parse(widget.product!.price) + fee}',
+                        style: const TextStyle(
                           fontFamily: 'Sora',
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
@@ -467,12 +479,12 @@ class _OrderScreenState extends State<OrderScreen> {
           ],
         ),
       ),
-      bottomNavigationBar:
-          bottomNavBarWidget(numProduct * int.parse(widget.product!.price)),
+      bottomNavigationBar: bottomNavBarWidget(
+          _numProduct * int.parse(widget.product!.price) + fee),
     );
   }
 
-  Container bottomNavBarWidget(int num) {
+  Container bottomNavBarWidget(int? num) {
     return Container(
       height: 140,
       padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
@@ -569,14 +581,15 @@ class _OrderScreenState extends State<OrderScreen> {
             height: 15,
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () => _onOrderPressed(context),
             style: ElevatedButton.styleFrom(
-                backgroundColor: Palette.mainColor,
-                foregroundColor: Palette.whiteColor,
-                minimumSize: const Size(315, 60),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                )),
+              backgroundColor: Palette.mainColor,
+              foregroundColor: Palette.whiteColor,
+              minimumSize: const Size(315, 60),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+            ),
             child: const Text(
               'Order',
               textAlign: TextAlign.center,
